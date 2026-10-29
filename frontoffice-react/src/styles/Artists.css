@@ -1,0 +1,263 @@
+#artists-main {
+  background-color: var(--ti-black);
+  padding-top: 110px;
+  padding-bottom: 50px;
+  min-height: 100vh;
+}
+
+#artists-title {
+  font-family: var(--ff-bebas);
+  font-size: 36px;
+  color: var(--ti-white);
+}
+
+#search-bar {
+  width: 50%;
+  position: relative;
+  color: var(--ti-gray);
+  margin: 20px 0 30px;
+  transition: all 0.25s linear;
+
+  &:hover {
+    color: var(--ti-purple);
+  }
+
+  input {
+    width: 100%;
+    border: 2px solid var(--ti-gray);
+    font-size: 20px;
+    background-color: transparent;
+    padding: 10px 15px;
+    border-radius: 10px;
+    color: var(--ti-white);
+    transition: all 0.25s linear;
+
+    &:hover {
+      border: 2px solid var(--ti-purple);
+    }
+
+    &:focus-visible {
+      outline: none;
+      border: 2px solid var(--ti-purple);
+    }
+
+    &::placeholder {
+      color: var(--ti-gray);
+    }
+  }
+
+  i {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    right: 10px;
+    top: 50%;
+    font-size: 20px;
+    cursor: pointer;
+  }
+}
+
+.artist-row {
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  gap: 50px;
+  flex-wrap: wrap;
+  margin-bottom: 50px;
+}
+
+.artist-card {
+  width: calc((100% - 3 * 50px) / 4);
+  aspect-ratio: 1 / 1;
+  /* background-color: blue; */
+  position: relative;
+  cursor: pointer;
+  transition: all 0.25s linear;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    display: block;
+  }
+}
+
+.artist-hover {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(112, 38, 224, 0.6);
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: all 0.25s linear;
+
+  p {
+    font-family: var(--ff-inter);
+    color: var(--ti-white);
+    font-size: 18px;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+  }
+
+  i {
+    color: var(--ti-white);
+    font-size: 30px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+}
+
+.artist-card:hover {
+  .artist-hover {
+    opacity: 1;
+  }
+}
+
+.empty-artists {
+  font-family: var(--ff-inter);
+  color: var(--ti-purple);
+  font-style: italic;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+
+  i {
+    font-size: 30px;
+  }
+}
+
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 2;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ======================================= */
+/* ======================================= */
+/* ======================================= */
+/* ======================================= */
+/* ======================================= */
+
+/* media query */
+@media screen and (max-width: 1024px) {
+  .artist-row {
+    gap: 30px;
+    margin-bottom: 30px;
+  }
+
+  .artist-card {
+    width: calc((100% - 3 * 30px) / 4);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #artists-title {
+    font-size: 30px;
+  }
+
+  #search-bar {
+    width: 100%;
+    margin: 20px 0 30px;
+
+    input {
+      width: 100%;
+      border: 2px solid var(--ti-gray);
+      font-size: 17px;
+      padding: 10px 15px;
+    }
+
+    i {
+      right: 10px;
+      top: 50%;
+      font-size: 20px;
+    }
+  }
+
+  .artist-row {
+    gap: 30px;
+    margin-bottom: 30px;
+  }
+
+  .artist-card {
+    width: calc((100% - 2 * 30px) / 3);
+  }
+}
+
+@media screen and (max-width: 586px) {
+  #artists-title {
+    font-size: 27px;
+  }
+
+  #search-bar {
+    width: 100%;
+    margin: 18px 0 25px;
+
+    input {
+      width: 100%;
+      border: 2px solid var(--ti-gray);
+      font-size: 17px;
+      padding: 10px 15px;
+    }
+
+    i {
+      right: 10px;
+      top: 50%;
+      font-size: 20px;
+    }
+  }
+
+  .artist-row {
+    gap: 20px;
+    margin-bottom: 30px;
+  }
+
+  .artist-card {
+    width: calc((100% - 1 * 20px) / 2);
+  }
+}
+
+@media screen and (max-width: 425px) {
+  #artists-title {
+    font-size: 20px;
+  }
+
+  #search-bar {
+    width: 100%;
+    margin: 12px 0 25px;
+
+    input {
+      width: 100%;
+      border: 1px solid var(--ti-gray);
+      font-size: 12px;
+      padding: 10px 15px;
+
+      &:focus-visible {
+        border: 1px solid var(--ti-purple);
+      }
+    }
+
+    i {
+      right: 10px;
+      top: 50%;
+      font-size: 15px;
+    }
+  }
+
+  .artist-row {
+    gap: 20px;
+    margin-bottom: 30px;
+  }
+
+  .artist-card {
+    width: calc((100% - 1 * 20px) / 2);
+  }
+}

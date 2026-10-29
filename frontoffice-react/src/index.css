@@ -1,0 +1,159 @@
+@import url("bootstrap-icons");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --ff-bebas: "Bebas Neue", sans-serif;
+  --ff-inter: "Inter", sans-serif;
+  --ti-black: #080909;
+  --ti-gray: #464749;
+  --ti-purple: #7026e0;
+  --ti-white: #ffffff;
+  --ti-green: #1c4928;
+}
+
+/* containers */
+.container-fluid {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.container {
+  width: 70%;
+  margin: 0 auto;
+}
+
+/* generics */
+ul {
+  list-style: none;
+}
+
+/* utilities */
+.trap-italy-button {
+  padding: 15px 20px;
+  border-radius: 10px;
+  background-color: var(--ti-white);
+  color: var(--ti-white);
+  font-family: var(--ff-bebas);
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 80px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: color 0.25s linear;
+
+  * {
+    position: relative;
+    z-index: 1;
+  }
+}
+
+.trap-italy-button::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: var(--ti-purple);
+  transform: scaleY(1);
+  transform-origin: bottom;
+  transition: transform 0.25s ease;
+}
+
+.trap-italy-button:hover {
+  color: var(--ti-purple);
+}
+
+.trap-italy-button:hover::before {
+  transform: scaleY(0);
+}
+
+.load-more-button {
+  width: 250px;
+  white-space: nowrap;
+}
+
+/* ======================================= */
+/* ======================================= */
+/* ======================================= */
+/* ======================================= */
+/* ======================================= */
+
+/* media query */
+@media screen and (max-width: 1081px) {
+  .trap-italy-button {
+    padding: 10px 17px;
+    border-radius: 10px;
+    font-size: 22px;
+    gap: 70px;
+
+    * {
+      position: relative;
+      z-index: 1;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .trap-italy-button {
+    padding: 10px 17px;
+    border-radius: 10px;
+    font-size: 22px;
+    gap: 70px;
+    margin: 0 auto;
+
+    * {
+      position: relative;
+      z-index: 1;
+    }
+  }
+
+  .load-more-button {
+    width: 250px;
+    white-space: nowrap;
+    margin: 0;
+  }
+}
+
+@media screen and (max-width: 586px) {
+  .load-more-button {
+    width: 100%;
+    white-space: nowrap;
+    margin: 0;
+  }
+}
+
+@media screen and (max-width: 538px) {
+  .trap-italy-button {
+    padding: 10px 17px;
+    border-radius: 10px;
+    font-size: 18px;
+    gap: 70px;
+    margin: 0 auto;
+
+    * {
+      position: relative;
+      z-index: 1;
+    }
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .trap-italy-button {
+    padding: 10px 17px;
+    border-radius: 10px;
+    font-size: 15px;
+    gap: 70px;
+    margin: 0 auto;
+
+    * {
+      position: relative;
+      z-index: 1;
+    }
+  }
+}

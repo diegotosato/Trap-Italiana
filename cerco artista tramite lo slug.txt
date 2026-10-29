@@ -1,0 +1,37 @@
+cerco artista tramite lo slug:
+https://api.spotify.com/v1/search?q=artist%3A{artist_slug}&type=artist&market=IT&limit=10&offset=0
+
+faccio verifica che il nome combaci al 100%: normalize(name) === normalize(slug)
+
+salvo la sua immagine del profilo perché mi serve da mettere in pagina;
+salvo l'ID: {artist_id}
+
+
+una volta che ho l'artista corretto ottengo la lista di tutti i suoi album:
+https://api.spotify.com/v1/artists/{artist_id}/albums?include_groups=album&market=IT&limit=50&offset=0
+
+tramite questa chiamata mi posso restituire un json con degli oggetti che avranno le seguenti chiavi: nome album, immagine copertina, eventuali altre info che mi possono servire
+
+salvo id ultimo album uscito: {last_album_id}
+
+l'iframe in pagina avrà ID dell'ultimo album
+<iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/album/{last_album_id}?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+
+
+
+Sfera Ebbasta https://open.spotify.com/intl-it/artist/23TFHmajVfBtlRx5MXqgoz?si=YJbIR1FRQACrcDnXjOg77Q
+Artie 5ive https://open.spotify.com/intl-it/artist/2R4kNOwHUUsuDYhKsESVbF?si=6jk31fsmRm6hAHLrTu7gzw
+Anna https://open.spotify.com/intl-it/artist/7K80yOTC0Id95gRaOxDG5u?si=LFSvOD5dTKK32d51gWNBCA
+Emis Killa https://open.spotify.com/intl-it/artist/6FtwCmLY6L1sqvjaQ2lV6G?si=OsNY5HQYTMyIEmi75XkwsA
+Jake https://open.spotify.com/intl-it/artist/6JFRI91YaCXREGQYzHSnUH?si=Xgj8vnjTRBWOyG_R81IKYg
+salmo https://open.spotify.com/intl-it/artist/3hBQ4zniNdQf1cqqo6hzuW?si=CmDuaOZ_R2-HNCw22Wt1pQ
+
+lazza https://open.spotify.com/intl-it/artist/0jdNdfi4vAuVi7a6cPDFBM?si=u0sNA5I6S7aR9u1Qd9wwjg
+marra https://open.spotify.com/intl-it/artist/5AZuEF0feCXMkUCwQiQlW7?si=haBJI-o3RUycR4DYEADrVA
+shiva https://open.spotify.com/intl-it/artist/2K5nCggbhSZ00YCYP5qkZS?si=1tJ46gA9RC-zrA28nJa0Aw
+ernia https://open.spotify.com/intl-it/artist/3fhMfkPPzksWuw0hEm4ldm?si=HeOwQAlpQE2fk7mTB7qHtw
+capo plaza https://open.spotify.com/intl-it/artist/5SulO4l40qDuV9zUGLZx7n?si=yySonZ_dRKS2s3s8QjQNaw
+guè https://open.spotify.com/intl-it/artist/7F2utINZ6tSokSiZTQBE27?si=eVII4amRSyWwl7dlanhHRA
+tedua https://open.spotify.com/intl-it/artist/1AgAVqo74e2q4FVvg0xpT7?si=4vIhts6wR_GyRlevu40dSg
+kid yugi https://open.spotify.com/intl-it/artist/0EUR8jz8L936AEbV2Spkca?si=NWk9vzhGSvqigy5qseJxyQ
+
